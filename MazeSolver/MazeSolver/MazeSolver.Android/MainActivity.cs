@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Content;
 using Android.Provider;
 using Android.Graphics;
-using System.IO;
 using Java.Lang;
 using Android.Media;
 
@@ -29,6 +28,39 @@ namespace MazeSolver.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        protected override async void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            if (resultCode == Result.Ok)
+            {
+                Bitmap bitmap = null;
+
+                if (requestCode == (int)PhotoSource.Camera)
+                    bitmap = (Bitmap)data.Extras.Get("data");
+                else if (requestCode == (int)PhotoSource.Gallery)
+                    bitmap = GetThumbnail(data.Data, 150);
+                else
+                    return;
+
+                await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new EditMazeTabPage(bitmap));
+            }
+        }
+
+        public void TakeAPhoto()
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            StartActivityForResult(intent, (int)PhotoSource.Camera);
+        }
+
+        public void FindAPhoto()
+        {
+            Intent intent = new Intent();
+            intent.SetType("image/*");
+            intent.SetAction(Intent.ActionGetContent);
+            StartActivityForResult(Intent.CreateChooser(intent, "Select photo"), (int)PhotoSource.Gallery);
         }
 
         public Bitmap GetThumbnail(Android.Net.Uri uri, int thumbnailSize)
@@ -68,39 +100,6 @@ namespace MazeSolver.Droid
             int k = Integer.HighestOneBit((int)System.Math.Floor(ratio));
             if (k == 0) return 1;
             else return k;
-        }
-
-        protected override async void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-
-            if (resultCode == Result.Ok)
-            {
-                Bitmap bitmap = null;
-
-                if (requestCode == (int)PhotoSource.Camera)
-                    bitmap = (Bitmap)data.Extras.Get("data");
-                else if (requestCode == (int)PhotoSource.Gallery)
-                    bitmap = GetThumbnail(data.Data, 150);
-                else
-                    return;
-
-                await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new EditMazeTabPage(bitmap));
-            }
-        }
-
-        public void TakeAPhoto()
-        {
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            StartActivityForResult(intent, (int)PhotoSource.Camera);
-        }
-
-        public void FindAPhoto()
-        {
-            Intent intent = new Intent();
-            intent.SetType("image/*");
-            intent.SetAction(Intent.ActionGetContent);
-            StartActivityForResult(Intent.CreateChooser(intent, "Select photo"), (int)PhotoSource.Gallery);
         }
     }
 }

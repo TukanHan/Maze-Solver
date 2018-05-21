@@ -9,10 +9,15 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="10" Margin="20">
-            <Label Text="Maze Solver v1.0."  />
-            <Label Text="Aplikacja wczytuje schemat labiryntu ze zdjęcia bądź kamery, a następnie znajduje wyjście z punktu A do punktu B." />
-            <Label Text="Program stworzony w języku C# i technologii Xamarin."/>
-            <Label Text="TukanHan"/>
+
+            <Label Font="25" Text="Maze Solver v1.0."  />
+            <Label Font="16" Text="Aplikacja wczytuje schemat labiryntu ze zdjęcia bądź kamery, a następnie znajduje wyjście z punktu A do punktu B." />
+            <Label Font="16" Text="Program o otwartym kodzie źródłowym, stworzony w języku C# i technologii Xamarin."/>
+            <StackLayout Orientation="Horizontal">
+                <Label Font="16" Text="Dostępny pod: "/>
+                <Label Font="16" Text="github.com/TukanHan" TextColor="RoyalBlue" x:Name="linkLabel"/>
+            </StackLayout>
+            <Label Font="16" Text="TukanHan"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

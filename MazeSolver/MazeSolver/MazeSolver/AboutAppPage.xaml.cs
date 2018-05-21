@@ -15,6 +15,12 @@ namespace MazeSolver
 		public AboutAppPage ()
 		{
 			InitializeComponent ();
+            linkLabel.GestureRecognizers.Add(new TapGestureRecognizer((view) => Hyperlink("https://github.com/TukanHan/Maze-Solver")));
 		}
-	}
+
+        private void Hyperlink(string link)
+        {
+            Device.OpenUri(new Uri(link));
+        }
+    }
 }
