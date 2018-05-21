@@ -6,9 +6,9 @@ wyjście.
 # Źródła labiryntu
 
 Aplikacja umożliwia przetwarzanie
-* zdjęć przechwytywanych z aparatu
-* wcześniej wykonanych zdjęć z pamięci telefonu
-* obrazków z pamięci telefonu
+* Zdjęć przechwytywanych z aparatu
+* Wcześniej wykonanych zdjęć z pamięci telefonu
+* Obrazków z pamięci telefonu
 
 # Konwersja obrazu na labirynt
 
@@ -39,14 +39,14 @@ Ostatnim etapem jest odtworzenie labiryntu na podstawie zebranych linii. Na pods
 # Rozwiązanie labiryntu
 
 Jeśli stworzony labirynt jest poprawny:
-* ma prostokątny kształt
-* zawiera dokładnie 2 punkty wejścia
-* jest szeroki i wysoki na co najmniej 3 jednostki
+* Ma prostokątny kształt
+* Zawiera dokładnie 2 punkty wejścia
+* Jest szeroki i wysoki na co najmniej 3 jednostki
+
 można przejść do kolejnego kroku, którym jest wyszukiwanie ścieżki.
 
 W tym kroku wyszukiwana jest droga z punktu A do punktu B. Jeśli takowa istnieje, zostaje ona nakreślona.
 
 # Informacje
-
 
 Aplikacja została stworzona na system Android w technologii Xamarin w języku C# przez TukanHan.
