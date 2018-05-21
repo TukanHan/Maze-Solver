@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MazeSolver.EditMazeTabPage">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Edytuj"/>
+    </TabbedPage.ToolbarItems>
+
+    <ContentPage Title="Podgląd">
+        <StackLayout Margin="20">
+            <Image x:Name="Photo1" WidthRequest="200" HeightRequest="200"/>
+            <Button Text="Aktualizuj" Clicked="UpdateImage" WidthRequest="200" HorizontalOptions="Center"/>
+            <Button Text="Akceptuj Obrazek" x:Name="AcceptImageButton" WidthRequest="200" HorizontalOptions="Center" Clicked="SolvMaze"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Krok 1">
+        <StackLayout>
+            <Image x:Name="Photo2" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="{Binding Source={x:Reference ThresholdingSlider}, Path= Value, StringFormat='Progowanie: {0}'}"
+                   Font="17" HorizontalOptions="CenterAndExpand"/>
+            <Slider x:Name="ThresholdingSlider" Value="{Binding Thresholding}"
+                    Maximum="200" Minimum="40"/>
+            <Button Text="Aktualizuj" Clicked="UpdateImage" WidthRequest="200" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Krok 2">
+        <StackLayout>
+            <Image x:Name="Photo3" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="{Binding Source={x:Reference RepeirIterationSteper}, Path= Value, StringFormat='Liczba iteracji: {0}'}"
+                   Font="17" HorizontalOptions="CenterAndExpand"/>
+            <Stepper x:Name="RepeirIterationSteper" Value="{Binding RepeirIteration}" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Aktualizuj" Clicked="UpdateImage" WidthRequest="200" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Krok 3">
+        <StackLayout>
+            <Image x:Name="Photo4" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="{Binding Source={x:Reference MinimalShapeSizeSteper}, Path= Value, StringFormat='Minimalny rozmiar kształtu: {0}'}"
+                   Font="17" HorizontalOptions="CenterAndExpand"/>
+            <Stepper x:Name="MinimalShapeSizeSteper" Value="{Binding MinimalShapeSize}" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Aktualizuj" Clicked="UpdateImage" WidthRequest="200" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Krok 4">
+        <StackLayout>
+            <Image x:Name="Photo5" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="{Binding Source={x:Reference LineThicknesSteper}, Path= Value, StringFormat='Grubość linii: {0}'}"
+                   Font="17" HorizontalOptions="CenterAndExpand"/>
+            <Stepper x:Name="LineThicknesSteper" Value="{Binding LineThicknes}" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding Source={x:Reference FieldLenghtSteper}, Path= Value, StringFormat='Odstęp pojedyńczego pola: {0}'}"
+                   Font="17" HorizontalOptions="CenterAndExpand"/>
+            <Stepper x:Name="FieldLenghtSteper" Value="{Binding FieldLenght}" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Aktualizuj" Clicked="UpdateImage" WidthRequest="200" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

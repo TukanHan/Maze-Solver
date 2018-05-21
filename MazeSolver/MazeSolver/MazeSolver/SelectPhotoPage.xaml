@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MazeSolver.SelectPhotoPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content >
+        <StackLayout>
+            <Label Text="Maze Solver" Font="45" VerticalOptions="Start" HorizontalOptions="Center" Margin="30"/>
+            <Button x:Name="takeAPtotoButton" Text="Zrób Zdjęcie" Clicked="TakeAPhoto"/>
+            <Button x:Name="findAPtotoButton" Text="Wybierz Zdjęcie" Clicked="FindAPhoto"/>
+            <Button x:Name="instructionButton" Text="Instrukcja" Clicked="Instruction"/>
+            <Button x:Name="aboutAppButton" Text="O Aplikacji" Clicked="AboutApp"/>
+            <Label Text="TukanHan" Font="17" VerticalOptions="End" HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

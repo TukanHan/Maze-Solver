@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MazeSolver.InstructionPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Instrukcje"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Margin="20">
+            <Label Text="Maze Solver v1.0."  />
+            <Label Text="Aplikacja wczytuje schemat labiryntu ze zdjęcia bądź kamery." />
+            <Label Text="Aplikacja rozpoznaje prostokątne labirynty o 2 punktach wejściowych." />
+            <Label Text="Upewnij się że ścianki labiryntu są odpowiednio grube." />
+            <Label Text="Upewnij się że zdjęcie ma równomierne oświetlenie." />
+            <Label Text="Upewnij się że labirynt znajduje się w centrum zdjęcia." />
+            <Label Text="Upewnij się że zdjęcie jest zrobione pod odpowiednim kątem." />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

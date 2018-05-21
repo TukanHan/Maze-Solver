@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{0A0F84EA-3CF9-4313-83AB-F87C97BE9730}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MazeSolver</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AboutAppPage.xaml.cs">
+      <DependentUpon>AboutAppPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EditMazeTabPage.xaml.cs">
+      <DependentUpon>EditMazeTabPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ImageSource Constructors\ImageConstructor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InstructionPage.xaml.cs">
+      <DependentUpon>InstructionPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ImageSource Constructors\MazeImageConstructor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MazeSolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Photo to Maze Conversion\LineDetector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Photo to Maze Conversion\LineMerger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Photo to Maze Conversion\MazeConstructor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Photo to Maze Conversion\MazeConstructorPreference.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SelectPhotoPage.xaml.cs">
+      <DependentUpon>SelectPhotoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Photo to Maze Conversion\ShapeDetector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SolvMazePage.xaml.cs">
+      <DependentUpon>SolvMazePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SelectPhotoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AboutAppPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)InstructionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)EditMazeTabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SolvMazePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ImageSource Constructors\" />
+  </ItemGroup>
+</Project>
