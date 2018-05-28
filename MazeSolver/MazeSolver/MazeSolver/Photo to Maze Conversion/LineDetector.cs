@@ -327,15 +327,15 @@ namespace MazeSolver
                     currentSource[i, j] = false;
         }
 
-        private void DestroyHorizontalLine(Point start, int height)
+        private void DestroyHorizontalLine(Point start, int lineHeight)
         {
             int startY = start.Y - preference.LineThicknes;
             if (startY < 0) startY = 0;
 
             int endY = start.Y + preference.LineThicknes;
-            if (endY >= width) endY = height - 1;
+            if (endY >= height) endY = height - 1;
 
-            for (int i = start.X; i <= start.X + height; ++i)
+            for (int i = start.X; i <= start.X + lineHeight; ++i)
                 for (int j = startY; j <= endY; ++j)
                     currentSource[j, i] = false;
         }
@@ -368,7 +368,7 @@ namespace MazeSolver
                 if (startY < 0) startY = 0;
 
                 int endY = line.A.Y + (preference.LineThicknes >> 1);
-                if (endY >= width) endY = height - 1;
+                if (endY >= height) endY = height - 1;
 
                 for (int i = line.A.X; i < line.B.X; ++i)
                     for (int j = startY; j <= endY; ++j)
